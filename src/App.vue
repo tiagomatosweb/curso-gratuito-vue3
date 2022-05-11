@@ -1,75 +1,81 @@
 <template>
     <div>
+        <TheHeader v-if="showHeader" />
+        <h1>Hello World</h1>
+        <br>
         <input
             v-model="name"
             type="text"
-        > <br>
-        {{ name }}
+        >
+        {{ name }} <br>
 
-        <br><br>
-
-        <input
-            v-model="user.first_name"
-            type="text"
-        > <br>
-        <input
-            v-model="user.last_name"
-            type="text"
-        > <br>
-        {{ user.first_name }} {{ user.last_name }}
-
-        <br><br><br>
-        <select v-model="pageCount">
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-        </select> <br>
-        {{ pageCount }}
+        <button @click="showHeader = !showHeader">
+            Ativar e desativar header
+        </button>
     </div>
 </template>
 
 <script>
+import TheHeader from '@/components/TheHeader';
 export default {
     name: 'App',
+    components: { TheHeader },
     data() {
         return {
-            name: '',
-            pageCount: 5,
-            user: {
-                first_name: '',
-                last_name: '',
-            },
+            name: 'Jon Snow',
+            showHeader: true,
         }
     },
+    // Criação
+        // Preparar o componente
+        // Ajax, inicializar algumas variáveis
+        // Não tem acesso ao template (DOM)
+    // Montagem
+        // Inicializar um lib externa (new Lib())
+        // Precisa de acesso ao template (DOM)
+        // Tem acesso ao template (DOM)
+    // Atualização
+        // Debug
+        // Update
+    // Desmontagem
+        // Remover tudo o que for ncessário (lib->destroy())
+        // para liberar memória
+
+    // HOOKS
+    // beforeUpdate() {
+    //     console.log('beforeUpdate', this.name);
+    // },
+    // updated() {
+    //     console.log('updated', this.name);
+    // },
+    // beforeCreate() {
+    //     console.log('beforeCreate');
+    //     console.log('Estado:', this.name);
+    //     console.log('DOM:', this.$el);
+    // },
+    // created() {
+    //     console.log('created');
+    //     console.log('Estado:', this.name);
+    //     console.log('DOM:', this.$el);
+    // },
+    // beforeMount() {
+    //     console.log('beforeMount');
+    //     console.log('Estado:', this.name);
+    //     console.log('DOM:', this.$el);
+    // },
+    // mounted() {
+    //     console.log('mounted');
+    //     console.log('Estado:', this.name);
+    //     console.log('DOM:', this.$el);
+    // },
 
     watch: {
-        name(vl) {
-            if (vl.length >= 3) {
-                this.saveUserName()
-            }
-        },
-        pageCount() {
-            this.changePage();
-        },
-        user: {
-            handler() {
-                console.log('User alterado');
-            },
-            deep: true
-        },
     },
 
     computed: {
     },
 
     methods: {
-        saveUserName() {
-            console.log('Ajax');
-            console.log(this.name);
-        },
-        changePage() {
-            console.log('Ajax changePage');
-        }
     }
 }
 </script>
