@@ -1,17 +1,12 @@
 <template>
     <div>
-        <TheHeader v-if="showHeader" />
-        <h1>Hello World</h1>
-        <br>
-        <input
-            v-model="name"
-            type="text"
-        >
-        {{ name }} <br>
+        <TheHeader>
+            <template v-slot:description>
+                <p>dasds</p>
+            </template>
 
-        <button @click="showHeader = !showHeader">
-            Ativar e desativar header
-        </button>
+            Content do header - menu ...
+        </TheHeader>
     </div>
 </template>
 
@@ -22,61 +17,17 @@ export default {
     components: { TheHeader },
     data() {
         return {
-            name: 'Jon Snow',
-            showHeader: true,
         }
     },
-    // Criação
-        // Preparar o componente
-        // Ajax, inicializar algumas variáveis
-        // Não tem acesso ao template (DOM)
-    // Montagem
-        // Inicializar um lib externa (new Lib())
-        // Precisa de acesso ao template (DOM)
-        // Tem acesso ao template (DOM)
-    // Atualização
-        // Debug
-        // Update
-    // Desmontagem
-        // Remover tudo o que for ncessário (lib->destroy())
-        // para liberar memória
-
-    // HOOKS
-    // beforeUpdate() {
-    //     console.log('beforeUpdate', this.name);
-    // },
-    // updated() {
-    //     console.log('updated', this.name);
-    // },
-    // beforeCreate() {
-    //     console.log('beforeCreate');
-    //     console.log('Estado:', this.name);
-    //     console.log('DOM:', this.$el);
-    // },
-    // created() {
-    //     console.log('created');
-    //     console.log('Estado:', this.name);
-    //     console.log('DOM:', this.$el);
-    // },
-    // beforeMount() {
-    //     console.log('beforeMount');
-    //     console.log('Estado:', this.name);
-    //     console.log('DOM:', this.$el);
-    // },
-    // mounted() {
-    //     console.log('mounted');
-    //     console.log('Estado:', this.name);
-    //     console.log('DOM:', this.$el);
-    // },
-
-    watch: {
-    },
-
-    computed: {
-    },
-
-    methods: {
-    }
+    beforeUpdate() {},
+    updated() {},
+    beforeCreate() {},
+    created() {},
+    beforeMount() {},
+    mounted() {},
+    watch: {},
+    computed: {},
+    methods: {}
 }
 </script>
 

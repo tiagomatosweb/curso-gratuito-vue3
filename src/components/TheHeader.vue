@@ -1,29 +1,25 @@
 <template>
     <header class="header">
-        Header
+        <h1
+            v-if="$slots.title"
+            class="title">
+            <slot name="title" />
+        </h1>
+
+        <div class="description">
+            <slot name="description" />
+        </div>
+
+        <div class="content">
+            <slot />
+        </div>
     </header>
 </template>
 
 <script>
     export default {
         mounted() {
-            window.addEventListener('resize', this.resize)
-        },
-        beforeUnmount() {
-            // Destruir as nossas libs
-            // Eventos
-            // Listeners
-            console.log('beforeUnmount');
-            window.removeEventListener('resize', this.resize)
-        },
-        unmounted() {
-            console.log('unmounted');
-        },
-
-        methods: {
-            resize($evt) {
-                console.log($evt);
-            }
+            console.log(this.$slots);
         }
     }
 </script>
