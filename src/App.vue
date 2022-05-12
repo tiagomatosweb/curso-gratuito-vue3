@@ -1,20 +1,25 @@
 <template>
     <div>
-        <div class="card">
-            Teste
-        </div>
-        <BaseCard />
-        <BaseCard />
+        <BaseAlert
+            v-if="showAlert"
+            :variant="variant"
+            @close="onClose()"
+        >
+            {{ text }}
+        </BaseAlert>
     </div>
 </template>
 
 <script>
-import BaseCard from '@/components/BaseCard';
+import BaseAlert from '@/components/BaseAlert';
 export default {
     name: 'App',
-    components: { BaseCard },
+    components: { BaseAlert },
     data() {
         return {
+            showAlert: true,
+            variant: 'success',
+            text: 'Seu formulário foi enviado'
         }
     },
     beforeUpdate() {},
@@ -25,7 +30,12 @@ export default {
     mounted() {},
     watch: {},
     computed: {},
-    methods: {}
+    methods: {
+        onClose() {
+            this.showAlert = false
+            console.log('on close');
+        }
+    }
 }
 </script>
 
