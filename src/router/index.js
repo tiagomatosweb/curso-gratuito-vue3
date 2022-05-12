@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
 const routes = [
@@ -19,11 +19,16 @@ const routes = [
     path: '/servicos',
     name: 'servicos',
     component: () => import('../views/ServicesView.vue'),
+  },
+  {
+    path: '/usuarios/:id',
+    name: 'usuarios-editar',
+    component: () => import('../views/UserEditView.vue')
   }
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 })
 
