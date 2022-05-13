@@ -48,5 +48,15 @@ export default createStore({
     },
   },
   actions: {
+    storeUser({ commit }, data) {
+      // rotina cabuloasa
+      // ajax
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          commit('storeUser', data);
+          resolve()
+        }, 3000)
+      })
+    },
   },
 })

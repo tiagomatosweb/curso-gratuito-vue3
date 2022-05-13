@@ -10,9 +10,12 @@
 
     <br><br>
     <br><br>
+    {{ $store.state.user.first_name }} {{ $store.state.user.last_name }} <br>
     <button @click="updateUser()">
         Atualizar perfil
     </button>
+    <br><br><br>
+    <br><br><br>
 </template>
 
 <script>
@@ -35,7 +38,10 @@ export default {
                 last_name: 'Matos',
                 email: 'tiago@tiago.com'
             }
-            this.$store.commit('storeUser', newUser)
+            // this.$store.commit('storeUser', newUser)
+            this.$store.dispatch('storeUser', newUser).then(() => {
+                console.log('terminou com sucesso');
+            })
         }
     },
 }
