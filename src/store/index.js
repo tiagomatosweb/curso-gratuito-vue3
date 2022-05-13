@@ -11,6 +11,9 @@ export default createStore({
     cart: []
   },
   mutations: {
+    storeUser(state, data) {
+      state.user = data
+    },
   },
   actions: {
   },
