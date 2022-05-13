@@ -1,20 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+    <AppProducts />
+    <br><br>
+    <br><br>
+
+    <pre>
+        {{ $store.state.cart }}
+    </pre>
+
+    <br><br>
+    <br><br>
     <button @click="updateUser()">
         Atualizar perfil
     </button>
-  <HelloWorld
-      user=""
-      msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppProducts from '@/components/Products/AppProducts';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+      AppProducts,
   },
     data() {
       return {
