@@ -1,62 +1,34 @@
 <template>
-    {{ name }} <br><br>
-
     <h5>User</h5>
     {{ user.first_name }}
     {{ user.last_name }}
     <br><br>
-    <h5>Admin</h5>
-    {{ admin.first_name }}
-    {{ admin.last_name }}
-    <br><br>
-    <img
-        @click="changeName()"
-        alt="Vue logo"
-        src="./assets/logo.png"
-    >
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h6>Full name</h6>
+    {{ fullName }}
+
+    <button @click="user.first_name = 'Sansa'">Atualizar</button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import { ref, reactive } from 'vue';
+import { ref, computed, watch } from 'vue';
 
 export default {
     name: 'App',
-    components: {
-        HelloWorld
-    },
     setup() {
-        const user = reactive({
+        const user = ref({
             first_name: 'Jon',
             last_name: 'Snow'
         })
 
-        const admin = ref({
-            first_name: 'Admin',
-            last_name: 'Master'
+        const fullName = computed(() => `${user.value.first_name} ${user.value.last_name}`)
+
+        watch(() => user.value.first_name, () => {
+            console.log('Logica cabulosa');
         })
-
-        const count = ref(0)
-        console.log(count);
-
-
-        // lgoica cabulosa
-        let name = 'Tiago'
-
-        const changeName = () => {
-            //logica cabulosa
-            alert('chegou')
-            name = 'Jon Snow'
-            user.first_name = 'Sansa'
-            admin.value.first_name = 'XXXX'
-        }
 
         return {
             user,
-            admin,
-            name,
-            changeName
+            fullName,
         }
     },
 }
