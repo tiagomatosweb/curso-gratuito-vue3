@@ -1,26 +1,39 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    Hello vue <br>
+    <AppButton
+        data-vue="Jon"
+        variant="danger"
+        @update="getUpdate"
+    >
+        Save
+        <template #icon>Icon</template>
+    </AppButton>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppButton from '@/components/AppButton';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
+    components: { AppButton },
+    setup() {
+        const getUpdate = (data) => {
+            console.log('getUpdate', data);
+        }
+
+        return {
+            getUpdate
+        }
+    },
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    margin-top: 60px;
 }
 </style>
