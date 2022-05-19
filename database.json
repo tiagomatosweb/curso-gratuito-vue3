@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Estudar javascript",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "title": "Estudar Vue",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "Estudar composition API",
+      "completed": false
+    }
+  ]
+}
