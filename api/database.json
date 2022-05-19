@@ -1,99 +1,19 @@
 {
   "todos": [
     {
-      "title": "asdasdtest",
+      "title": "Ler livro js",
       "completed": true,
       "id": 1
     },
     {
-      "title": "Estudar Vue",
+      "title": "Estudar vue.js",
       "completed": false,
-      "id": 2
+      "id": 3
     },
     {
-      "id": 3,
-      "title": "Estudar composition API",
-      "completed": false
-    },
-    {
-      "title": "test",
+      "title": "Comprar cursos na escola laravue",
       "completed": false,
       "id": 4
-    },
-    {
-      "title": "asdasdasdasd",
-      "completed": false,
-      "id": 5
-    },
-    {
-      "title": "abc",
-      "completed": false,
-      "id": 6
-    },
-    {
-      "title": "",
-      "completed": false,
-      "id": 7
-    },
-    {
-      "title": "zhx",
-      "completed": false,
-      "id": 8
-    },
-    {
-      "title": "abc",
-      "completed": false,
-      "id": 9
-    },
-    {
-      "title": "asd",
-      "completed": false,
-      "id": 10
-    },
-    {
-      "title": "123",
-      "completed": false,
-      "id": 11
-    },
-    {
-      "title": "abc",
-      "completed": false,
-      "id": 12
-    },
-    {
-      "title": "asdasd",
-      "completed": false,
-      "id": 13
-    },
-    {
-      "title": "iureyoiweurwer",
-      "completed": false,
-      "id": 14
-    },
-    {
-      "title": "234234sdf asfdsf",
-      "completed": false,
-      "id": 15
-    },
-    {
-      "title": "skdfjhsdlfkjsdf",
-      "completed": false,
-      "id": 16
-    },
-    {
-      "title": "kasjdhjksdf",
-      "completed": false,
-      "id": 17
-    },
-    {
-      "title": "adasdasd",
-      "completed": false,
-      "id": 18
-    },
-    {
-      "title": "234234",
-      "completed": false,
-      "id": 19
     }
   ]
 }
